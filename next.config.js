@@ -4,6 +4,10 @@
  */
 import "./src/env.js";
 import bundleAnalyzer from "@next/bundle-analyzer";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
@@ -11,8 +15,11 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {any} */
 const config = {
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true },
+  // Pin the workspace root so Turbopack doesn't infer it from stray
+  // lockfiles elsewhere on the machine.
+  turbopack: {
+    root: __dirname,
+  },
   images: {
     formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 60,
