@@ -29,11 +29,6 @@ export default function EditBlogPage({
     isPublished: false,
   });
 
-  useEffect(() => {
-    fetchBlog();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [resolvedParams.id]);
-
   const fetchBlog = async () => {
     try {
       const response = await fetch(`/api/admin/blogs/${resolvedParams.id}`);
@@ -62,6 +57,10 @@ export default function EditBlogPage({
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchBlog();
+  }, [resolvedParams.id]);
 
   const handleChange = (
     e: React.ChangeEvent<

@@ -110,10 +110,6 @@ export default function AdminFeedbackPage() {
   const [isExporting, setIsExporting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchFeedback();
-  }, []);
-
   const fetchFeedback = async () => {
     try {
       setIsLoading(true);
@@ -131,6 +127,10 @@ export default function AdminFeedbackPage() {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchFeedback();
+  }, []);
 
   const handleExport = async () => {
     try {

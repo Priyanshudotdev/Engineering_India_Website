@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src", ".eslintrc.cjs", "next.config.js"],
+  "include": ["src", "eslint.config.mjs", "next.config.js"],
   "exclude": ["node_modules", ".next"]
 }

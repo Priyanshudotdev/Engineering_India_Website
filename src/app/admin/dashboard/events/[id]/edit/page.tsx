@@ -60,10 +60,6 @@ export default function EditEventPage({
     rules: "",
   });
 
-  useEffect(() => {
-    fetchEvent();
-  }, [id]);
-
   const fetchEvent = async () => {
     try {
       const response = await fetch(`/api/admin/events/${id}`);
@@ -106,6 +102,10 @@ export default function EditEventPage({
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchEvent();
+  }, [id]);
 
   const handleChange = (
     e: React.ChangeEvent<
