@@ -10,6 +10,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 
 export const auth = betterAuth({
+  baseURL: env.NEXT_PUBLIC_BASE_URL,
   socialProviders: {
     google: {
       enabled: true,
