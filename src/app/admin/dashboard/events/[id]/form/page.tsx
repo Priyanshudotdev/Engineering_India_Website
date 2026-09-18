@@ -84,10 +84,6 @@ export default function EventFormPage({
     formSchema: [], // Start with empty form - admin adds fields as needed
   });
 
-  useEffect(() => {
-    fetchEventAndForm();
-  }, [eventId]);
-
   const fetchEventAndForm = async () => {
     try {
       // Fetch event details
@@ -126,6 +122,10 @@ export default function EventFormPage({
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchEventAndForm();
+  }, [eventId]);
 
   const addField = () => {
     const newField: FormField = {

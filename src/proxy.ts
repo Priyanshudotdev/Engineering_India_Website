@@ -19,7 +19,7 @@ interface SessionData {
   };
 }
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   if (
@@ -81,7 +81,6 @@ export async function middleware(req: NextRequest) {
 
     return NextResponse.next();
   } catch {
-    // eslint-disable-line @typescript-eslint/no-unused-vars
     const url = req.nextUrl.clone();
     url.pathname = "/auth";
     return NextResponse.redirect(url);

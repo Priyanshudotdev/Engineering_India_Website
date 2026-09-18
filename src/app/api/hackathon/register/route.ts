@@ -15,7 +15,6 @@ export async function POST(request: NextRequest) {
       { status: 403 },
     );
 
-    /* eslint-disable @typescript-eslint/no-unused-vars */
     /* UNREACHABLE CODE - Registration is closed */
     /*
     // Check authentication
@@ -305,7 +304,6 @@ export async function POST(request: NextRequest) {
       { status: 201 },
     );
     */
-    /* eslint-enable @typescript-eslint/no-unused-vars */
   } catch (error) {
     console.error("Registration error:", error);
     console.error("Error details:", {
