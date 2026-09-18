@@ -50,9 +50,9 @@ export const hackathon = sqliteTable("hackathon", {
   round1Status: text("round1_status").default("not_submitted"), // not_submitted | submitted | reviewed
 
   // Round 2 Selection
-  round2Qualified: integer("round2_qualified", { mode: "boolean" })
-    .default(false)
-    .notNull(),
+ round2Qualified: integer("round2_qualified", { mode: "boolean" })
+  .notNull()
+  .default(false),
 
   // Timestamps
   createdAt: integer("created_at", { mode: "timestamp" }).notNull(),

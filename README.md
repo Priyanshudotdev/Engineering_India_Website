@@ -21,7 +21,7 @@ Ensure you have the following installed on your machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/Priyanshudotdev/Engineering_India_Website.git](https://github.com/ChirayuPatle/Engineering_India_Website)
+   git clone [https://github.com/ChirayuPatle/Engineering_India_Website.git](https://github.com/ChirayuPatle/Engineering_India_Website)
    cd Engineering_India_Website
    ```
 

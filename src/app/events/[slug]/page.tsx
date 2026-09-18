@@ -117,9 +117,12 @@ export default function EventPage() {
   };
 
   const handleRegister = () => {
-    // FIX: Use the normalized eventId derived earlier
-    router.push(`/dashboard/register/${eventId || ""}`);
-  };
+  if (event?.googleFormLink) {
+    window.open(event.googleFormLink, "_blank");
+  } else {
+    alert("Registration form is not available yet.");
+  }
+};
 
   if (loading || !event) {
     return (

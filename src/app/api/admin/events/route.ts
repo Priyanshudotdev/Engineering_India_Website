@@ -32,19 +32,20 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json();
 
-    const newEvent = await db
-      .insert(event)
-      .values({
-        name: body.name,
-        description: body.description || null,
-        startDate: body.startDate ? new Date(body.startDate) : null,
-        endDate: body.endDate ? new Date(body.endDate) : null,
-        location: body.location || null,
-        category: body.category || null,
-        bannerImage: body.bannerImage || null,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      })
+ const newEvent = await db
+  .insert(event)
+  .values({
+    name: body.name,
+    description: body.description || null,
+    startDate: body.startDate ? new Date(body.startDate) : null,
+    endDate: body.endDate ? new Date(body.endDate) : null,
+    location: body.location || null,
+    category: body.category || null,
+    googleFormLink: body.googleFormLink || null,
+    bannerImage: body.bannerImage || null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  })
       .returning();
 
     return NextResponse.json(newEvent[0], { status: 201 });

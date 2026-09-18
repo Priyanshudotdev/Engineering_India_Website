@@ -18,6 +18,7 @@ export const event = sqliteTable("event", {
   coOrganizerContact: text("co_organizer_contact"),
   discordLink: text("discord_link"),
   whatsappLink: text("whatsapp_link"),
+  googleFormLink: text("google_form_link"),
   bannerImage: text("banner_image"),
   gallery: text("gallery"), // JSON stringified array of images
   details: text("details"),
